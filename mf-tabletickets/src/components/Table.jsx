@@ -1,36 +1,42 @@
 import React from "react";
 
-const Table = ({ data }) => {
+const Table = ({ data, columns }) => {
+    console.log("data:", data);
+    console.log("columns:", columns);
+
     return (
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Ticket</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Outbuilding</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
+        <div className="supercontainer">
+            <h2>Shift and Ticket Overview</h2>
+            <div className="table-container"> {/* Envuelve la tabla con un contenedor */}
+                <table className="table">
+                    <thead>
+                        <tr>
+                            {columns.map((column, index) => (
+                                <th key={index} scope="col">
+                                    {column}
+                                </th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((item, index) => {
+                            try {
+                                return (
+                                    <tr key={index}>
+                                        {columns.map((column, subIndex) => {
+                                            return <td key={subIndex}>{item[column]}</td>;
+                                        })}
+                                    </tr>
+                                );
+                            } catch (error) {
+                                console.error('Error rendering row:', error);
+                                return <tr key={index}><td colSpan={columns.length}>Error rendering row</td></tr>;
+                            }
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     );
 };
 

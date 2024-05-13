@@ -1,3 +1,28 @@
-.container{
-  width:50%;
+.container {
+  width: 65%;
+}
+
+h2 {
+  color: #23294b;
+  text-align: center;
+  margin-bottom: 4%;
+}
+
+.table-container {
+  max-height: 500px;
+  overflow-y: auto; 
+  border: 2px solid #eeeff4;
+  border-radius: 5px;
+}
+
+.table {
+  border: 2px solid #eeeff4;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.supercontainer{
+  padding: 6%;
+  border: 2px solid #eeeff4;
+  border-radius: 5px;
 }
