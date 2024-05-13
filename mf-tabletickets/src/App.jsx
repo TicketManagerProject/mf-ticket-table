@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 
 import Table from "./components/Table";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./index.css";
 
 const tableData = [
   {
