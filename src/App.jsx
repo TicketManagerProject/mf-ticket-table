@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import Table from "./components/Table";
+import TicketTable from "./components/TicketTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const tableData = [
@@ -26,7 +26,8 @@ const tableData = [
     Date: "2023-03-24",
     Time: "12:00 PM",
     Outbuilding: "Building C",
-  },,
+  },
+  ,
   {
     id: 2,
     Ticket: "ABC124",
@@ -40,7 +41,8 @@ const tableData = [
     Date: "2023-03-24",
     Time: "12:00 PM",
     Outbuilding: "Building C",
-  },,
+  },
+  ,
   {
     id: 2,
     Ticket: "ABC124",
@@ -54,7 +56,8 @@ const tableData = [
     Date: "2023-03-24",
     Time: "12:00 PM",
     Outbuilding: "Building C",
-  },,
+  },
+  ,
   {
     id: 2,
     Ticket: "ABC124",
@@ -68,7 +71,8 @@ const tableData = [
     Date: "2023-03-24",
     Time: "12:00 PM",
     Outbuilding: "Building C",
-  },,
+  },
+  ,
   {
     id: 2,
     Ticket: "ABC124",
@@ -87,7 +91,10 @@ const tableData = [
 
 const App = () => (
   <div className="container">
-    <Table data={tableData} columns={["id", "Ticket", "Date", "Time", "Outbuilding"]} />
+    <TicketTable
+      data={tableData}
+      columns={["id", "Ticket", "Date", "Time", "Outbuilding"]}
+    />
   </div>
 );
 
