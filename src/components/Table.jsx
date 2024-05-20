@@ -8,7 +8,7 @@ const Table = ({ data, columns }) => {
     return (
         <div className="supercontainer">
             <h2>Shift and Ticket Overview</h2>
-            <div className="table-container"> {/* Envuelve la tabla con un contenedor */}
+            <div className="table-container">
                 <table className="table">
                     <thead>
                         <tr>
