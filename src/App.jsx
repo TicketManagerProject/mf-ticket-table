@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import TicketTable from "./components/TicketTable";
+import Table from "./components/TicketTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const tableData = [
@@ -91,7 +91,7 @@ const tableData = [
 
 const App = () => (
   <div className="container">
-    <TicketTable
+    <Table
       data={tableData}
       columns={["id", "Ticket", "Date", "Time", "Outbuilding"]}
     />
