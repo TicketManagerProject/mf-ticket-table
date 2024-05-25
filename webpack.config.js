@@ -1,6 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const Dotenv = require('dotenv-webpack');
+const Dotenv = require("dotenv-webpack");
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
@@ -41,11 +41,11 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "mf_tabletickets",
+      name: "mf_ticket_table",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {
-        "./Table":"./src/components/TicketTable.jsx",
+        "./TicketTable": "./src/components/TicketTable.jsx",
       },
       shared: {
         ...deps,
@@ -62,6 +62,6 @@ module.exports = (_, argv) => ({
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
-    new Dotenv()
+    new Dotenv(),
   ],
 });
